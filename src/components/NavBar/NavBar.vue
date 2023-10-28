@@ -3,20 +3,22 @@
 <div>
   
   <div id="navbar">
-  <div id="free-shipping-bar">
-      Free Shipping On All Orders
-  </div>
+    <div id="free-shipping-bar">
+        Free Shipping On All Orders
+    </div>
+
+    <div class="navbar-container">
   
     <div id="brand">{{ brandName }}</div>
 
     <ul id="links">
-      <li><router-link to="/">NEW</router-link></li>
-      <li><router-link to="/brands">BRANDS</router-link></li>
-      <li><router-link to="/collections">COLLECTIONS</router-link></li>
-      <li><router-link to="/accessories">ACCESSORIES</router-link></li>
-      <li>
+      <li class="nav-link"><router-link to="/">NEW</router-link></li>
+      <li class="nav-link"><router-link to="/brands">BRANDS</router-link></li>
+      <li class="nav-link"><router-link to="/collections">COLLECTIONS</router-link></li>
+      <li class="nav-link"><router-link to="/accessories">ACCESSORIES</router-link></li>
+      <li class="nav-link">
         <a href="#" class="icon">
-        <router-link to="./components/About/About.vue">ABOUT</router-link>
+        <a href="#about">ABOUT</a>
       </a>
       </li>
     </ul>
@@ -27,12 +29,13 @@
         <img src="@/images/magnifier.png" alt="Magnifier Image" @click="openOverlay">
       </a>
   </div>
-  <button class="feedback-button">Feedback</button>
+  
   <div v-if="showSearchBar" class="search-container">
       <img src="@/images/searchbar.png" alt="Search Bar" class="search-bar">
-      <a @click="closeOverlay" class="close-icon">X</a>
+      <a @click="closeOverlay" class="close-icon"></a>
     </div>
   
+  </div>
   </div>
 </div>
 </template>
@@ -62,54 +65,56 @@ export default {
   },
 };
 <style scoped>
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+
 /* styles for the navbar component */
 #free-shipping-bar {
   background-color: gray;
   text-align: center;
   color: white; /* Text color */
   top:0;
-  position:fixed;
+  /* position:fixed; */
   width:100%;
-}
-.feedback-button {
-  position: fixed;
-  width: 28px;
-  height: 79px;
-  top: 353px;
-  left: 1412px;
-  padding: 6px 7px 6px 6px;
-  border: 2px solid #000;
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-  cursor: pointer;
-  transform: rotate(270deg); /* Add the rotation */
-  width: 67px; /* Set the width */
-  height: 15px; /* Set the height */
+  padding: 5px;
 }
 #navbar {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center; /* Vertically center the brand name */
   background-color: #fff; /* Set background to white */
   color: #000; /* Set text color to black */
-  padding: 10px 20px;
-  width: 1440px; 
+  /* padding: 10px 20px; */
+  width: 100%; 
   height: 83px;
-  left: 50%;
-  top:41px;
-  transform: translateX(-50%);
+  /* left: 50%; */
+  /* top:41px; */
+  /* transform: translateX(-50%); */
   background-color: #fff; /* Set background to white */
   color: #000; /* Set text color to black */
   z-index: 100; /* Ensure the navbar is above other content */
 
 }
+
+.navbar-container {
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
 #navbar {
-  width: 1440px;
+  width: 100%;
   height: 83px;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   background-color: #fff; /* Set background to white */
   color: #000; /* Set text color to black */
   z-index: 100; /* Ensure the navbar is above other content */

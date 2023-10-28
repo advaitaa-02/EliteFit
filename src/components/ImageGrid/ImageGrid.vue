@@ -27,13 +27,12 @@
 
 /* Styles for standard images */
 .image-standard {
-  width: 720px;
-  height: 599px;
+  width: 100%;
 }
 
 /* Style for the 7th image */
 .image-special {
-  width: 1440px;
+  width: 200%;
   height: 599px;
   top: 1921px;
 
